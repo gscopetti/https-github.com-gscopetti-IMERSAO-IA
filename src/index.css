@@ -1,0 +1,230 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+/* ═══════════════════════════════════════════════════
+   DESIGN SYSTEM — CIANO DIGITAL (COMPLETO)
+   ═══════════════════════════════════════════════════ */
+
+:root {
+  /* Primary Blues */
+  --color-primary:            #005be2;
+  --color-primary-active:     #0063dc;
+  --color-primary-light:      #0099e5;
+  --color-primary-disabled:   #d0d0d0;
+
+  /* CIANO ACCENT — Futuro Digital */
+  --color-gold:               #00c2e0;
+  --color-gold-dark:          #0099b3;
+  --color-gold-light:         #33d4ed;
+
+  /* Success Greens */
+  --color-success:            #00d084;
+  --color-success-bright:     #05cc47;
+
+  /* Deep Blue Gradient */
+  --color-deep-blue:          #0b3547;
+  --color-deep-dark:          #010d16;
+
+  /* Neutrals */
+  --color-ink:                #000000;
+  --color-body:               #1f2124;
+  --color-body-strong:        #000000;
+  --color-muted:              #2c2d33;
+  --color-muted-soft:         #666666;
+
+  --color-hairline:           #e0e0e0;
+  --color-hairline-strong:    #c0c0c0;
+
+  --color-canvas:             #ffffff;
+  --color-surface-soft:       #f5f5f5;
+  --color-surface-card:       #f8f8f8;
+  --color-surface-strong:     #e8e8e8;
+
+  /* Dark Surfaces */
+  --color-surface-dark:       #1a1a1a;
+  --color-surface-dark-elev:  #242424;
+
+  --color-on-primary:         #ffffff;
+  --color-on-dark:            #ffffff;
+  --color-on-dark-soft:       #cccccc;
+  --color-on-gold:            #000000;
+
+  /* Spacing */
+  --sp-xs:      4px;
+  --sp-sm:      8px;
+  --sp-md:      16px;
+  --sp-lg:      24px;
+  --sp-xl:      32px;
+  --sp-2xl:     48px;
+  --sp-3xl:     64px;
+  --sp-section: 80px;
+
+  /* Typography */
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'San Francisco', 'Helvetica Neue', 'Segoe UI', Roboto, Arial, sans-serif;
+  --fs-dxl: 48px; --fw-dxl: 700; --lh-dxl: 1.2;
+  --fs-dlg: 36px; --fw-dlg: 700; --lh-dlg: 1.3;
+  --fs-dmd: 28px; --fw-dmd: 700; --lh-dmd: 1.3;
+  --fs-dsm: 24px; --fw-dsm: 700; --lh-dsm: 1.25;
+  --fs-tlg: 20px; --fw-tlg: 700; --lh-tlg: 1.3;
+  --fs-tmd: 18px; --fw-tmd: 700; --lh-tmd: 1.4;
+  --fs-tsm: 16px; --fw-tsm: 700; --lh-tsm: 1.4;
+  --fs-bmd: 16px; --fw-bmd: 400; --lh-bmd: 1.6;
+  --fs-bsm: 14px; --fw-bsm: 400; --lh-bsm: 1.6;
+  --fs-cap: 12px; --fw-cap: 400; --lh-cap: 1.4;
+  --fs-lup: 13px; --fw-lup: 700; --lh-lup: 1.3; --ls-lup: 1.5px;
+  --fs-btn: 14px; --fw-btn: 700; --lh-btn: 1.0; --ls-btn: 0.5px;
+  --fs-nav: 14px; --fw-nav: 400; --lh-nav: 1.4; --ls-nav: 0.3px;
+
+  /* Radius */
+  --r-none: 0px;
+  --r-sm: 4px;
+  --r-md: 8px;
+  --r-lg: 12px;
+  --r-xl: 16px;
+  --r-full: 9999px;
+
+  /* Motion */
+  --duration-fast: 150ms;
+  --duration-standard: 300ms;
+  --duration-slow: 500ms;
+  --easing: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Gradients */
+  --gradient-gold: linear-gradient(90deg, rgba(255,255,255,0) 0%, #00c2e0 18%, #00c2e0 82%, rgba(255,255,255,0) 100%);
+  --gradient-deep-blue: linear-gradient(171deg, #0b3547 0%, #010d16 45%);
+}
+
+@layer base {
+  body {
+    background: var(--color-canvas);
+    color: var(--color-body);
+    font-family: var(--font);
+    font-size: var(--fs-bmd);
+    font-weight: var(--fw-bmd);
+    line-height: var(--lh-bmd);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    @apply m-0 p-0;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center cursor-pointer no-underline transition-all duration-300;
+    background: var(--color-gold); 
+    color: var(--color-on-gold);
+    font-family: var(--font); 
+    font-size: var(--fs-btn); 
+    font-weight: var(--fw-btn);
+    line-height: var(--lh-btn); 
+    letter-spacing: var(--ls-btn);
+    padding: 14px 32px; 
+    height: 48px;
+    border: none; 
+    border-radius: var(--r-md);
+    box-shadow: 0 2px 8px rgba(0, 194, 224, 0.3);
+  }
+  .btn-primary:hover {
+    background: var(--color-gold-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 194, 224, 0.4);
+  }
+
+  .btn-blue {
+    @apply inline-flex items-center justify-center cursor-pointer no-underline transition-all duration-300;
+    background: var(--color-primary); 
+    color: var(--color-on-primary);
+    font-family: var(--font); 
+    font-size: var(--fs-btn); 
+    font-weight: var(--fw-btn);
+    line-height: var(--lh-btn); 
+    letter-spacing: var(--ls-btn);
+    padding: 14px 32px; 
+    height: 48px;
+    border: none; 
+    border-radius: var(--r-md);
+  }
+  .btn-blue:hover { background: var(--color-primary-active); }
+
+  .btn-secondary-dark {
+    @apply inline-flex items-center justify-center cursor-pointer no-underline transition-all duration-300;
+    background: transparent; 
+    color: var(--color-on-dark);
+    font-family: var(--font); 
+    font-size: var(--fs-btn); 
+    font-weight: var(--fw-btn);
+    line-height: var(--lh-btn); 
+    letter-spacing: var(--ls-btn);
+    padding: 13px 31px; 
+    height: 48px;
+    border: 1px solid var(--color-gold); 
+    border-radius: var(--r-md);
+  }
+  .btn-secondary-dark:hover {
+    background: rgba(0, 194, 224, 0.15);
+    border-color: var(--color-gold-light);
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center cursor-pointer no-underline transition-all duration-300;
+    background: var(--color-canvas); 
+    color: var(--color-ink);
+    font-family: var(--font); 
+    font-size: var(--fs-btn); 
+    font-weight: var(--fw-btn);
+    line-height: var(--lh-btn); 
+    letter-spacing: var(--ls-btn);
+    padding: 13px 31px; 
+    height: 48px;
+    border: 1px solid var(--color-hairline-strong); 
+    border-radius: var(--r-md);
+  }
+  .btn-secondary:hover {
+    border-color: var(--color-gold);
+    color: var(--color-gold);
+  }
+
+  .btn-text {
+    @apply inline-flex items-center gap-2 cursor-pointer no-underline transition-all duration-300 uppercase bg-transparent border-none;
+    color: var(--color-gold);
+    font-family: var(--font); 
+    font-size: var(--fs-lup); 
+    font-weight: var(--fw-lup);
+    line-height: var(--lh-lup); 
+    letter-spacing: var(--ls-lup);
+  }
+  .btn-text:hover { color: var(--color-gold-dark); }
+  .btn-text-on-dark { color: var(--color-gold-light); }
+  .btn-text-on-dark:hover { color: var(--color-on-dark); }
+
+  .label-up {
+    font-size: var(--fs-lup); font-weight: var(--fw-lup);
+    line-height: var(--lh-lup); letter-spacing: var(--ls-lup);
+    text-transform: uppercase; color: var(--color-gold);
+  }
+  .label-up-dark {
+    font-size: var(--fs-lup); font-weight: var(--fw-lup);
+    line-height: var(--lh-lup); letter-spacing: var(--ls-lup);
+    text-transform: uppercase; color: var(--color-gold-light);
+  }
+  .label-up-muted {
+    font-size: var(--fs-lup); font-weight: var(--fw-lup);
+    line-height: var(--lh-lup); letter-spacing: var(--ls-lup);
+    text-transform: uppercase; color: var(--color-muted);
+  }
+
+  .m-stripe {
+    @apply w-full h-1 block border-none;
+    background: var(--gradient-gold);
+  }
+
+  .divider { @apply border-none border-t border-[var(--color-hairline)]; }
+}
+
+@theme {
+  --color-gold: var(--color-gold);
+  --color-gold-dark: var(--color-gold-dark);
+  --color-gold-light: var(--color-gold-light);
+  --color-deep-blue: var(--color-deep-blue);
+  --color-deep-dark: var(--color-deep-dark);
+}
